@@ -6,20 +6,22 @@ class TodoList extends React.Component {
     super()
   }
   render() {
-    console.log('this.props.todos', this.props.todos)
+
     return (
       <div>
-        {this.props.todos.map((todo) => {
+        {this.props.todos.map((task) => {
           return <Todo 
-            key={todo.id} 
-            todo={todo.name}
+            key={task.id} 
+            todo={task}
+            strikeTodo={this.props.strikeTodo}
             />
         })}
-        
+        {this.props.todos.length > 0 ? <button onClick={
+          this.props.clearCompleted}>Clear completed</button> : null
+        } 
       </div>
     )
   }
-
 }
 
 export default TodoList;
