@@ -8,7 +8,7 @@ class TodoList extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='list'>
         {this.props.todos.map((task) => {
           return <Todo 
             key={task.id} 
@@ -16,9 +16,7 @@ class TodoList extends React.Component {
             strikeTodo={this.props.strikeTodo}
             />
         })}
-        {this.props.todos.length > 0 ? <button onClick={
-          this.props.clearCompleted}>Clear completed</button> : null
-        } 
+        
       </div>
     )
   }

@@ -6,14 +6,15 @@ class Todo extends React.Component {
   }
   render() {
     return(
-      <div>
-        <ul>
+      <div className='list-container'>
+        <ul className='task-list'>
           <li
             className={`${this.props.todo.completed ? " completed" : ""}`}
             onClick={(e) => {
             this.props.strikeTodo(this.props.todo.id) 
             }} 
           >
+            {!(this.props.todo.completed) ?  <i className="far fa-circle" /> : <i className="fas fa-check-circle"></i> } 
             {this.props.todo.name}
           </li>
         </ul>
